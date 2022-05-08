@@ -2,10 +2,11 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles'
 
-export default function CustomBtn({text, type = 'Primary', bgColor, fgColor}) {
+export default function CustomBtn({onPress, text, type = 'Primary', bgColor, fgColor}) {
   return (
     <View>
       <TouchableOpacity activeOpacity={0.5}
+        onPress={onPress}
         style={[
           styles.btnCon,
           styles.BtnText,

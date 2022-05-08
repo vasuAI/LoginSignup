@@ -1,12 +1,18 @@
-import { View, Text, TextInput, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, Image, StyleSheet } from 'react-native'
+import { TextInput, } from 'react-native-paper'
 
-export default function CustomTextInp({placeholder}) {
+import React from 'react'
+import SignInScreen from '../../screen/SignInScreen/SignInScreen'
+
+export default function CustomTextInp({placeholder, inp, setInp}) {
+
   return (
     <View>
-        <TextInput 
+        <TextInput
+        mode='outlined'
+        label={placeholder}
         style={styles.textInp}  
-        placeholder={placeholder}
+        onChangeText={text=>setInp({email:text, password:text})}
         />
     </View>
   )
@@ -19,7 +25,7 @@ const styles = StyleSheet.create({
         borderRadius:8,
         marginVertical:10,
         marginHorizontal:20,
-        borderColor:'#ededed',
-        backgroundColor:'#FFFFFF'
+        borderColor : '#ededed',
+        backgroundColor :'#FFFFFF'
     }
 })
